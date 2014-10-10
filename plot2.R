@@ -11,8 +11,8 @@ data_sub <-subset(dat,Date == "2007-02-01" | Date =="2007-02-02")
 data_sub$DateTime <-as.POSIXct(paste(data_sub$Date,data_sub$Time))
 
 ## Plot 2
+png("plot2.png",height=480, width=480,bg="white")
 plot(data_sub$DateTime,data_sub$Global_active_power,,type="l",xlab="",ylab="Global Active Power (kilowatts)")
-dev.copy(png, file="plot2.png",height=480, width=480)
 dev.off()
 
 

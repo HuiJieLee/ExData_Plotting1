@@ -11,6 +11,7 @@ data_sub <-subset(dat,Date == "2007-02-01" | Date =="2007-02-02")
 data_sub$DateTime <-as.POSIXct(paste(data_sub$Date,data_sub$Time))
 
 ## Plot 4
+png("plot4.png",height=480, width=480,bg="white")
 par(mfrow=c(2,2),mar=c(4,4,2,1),oma=c(0,0,2,0))
 with(data_sub, {
 # plot 4-1
@@ -28,7 +29,6 @@ legend("topright",lty=1,col=c("black","red","blue"),legend=c("Sub_metering_1","S
 plot(Global_reactive_power~DateTime,type="l",xlab="datetime",ylab="Global_reactive_power")
 })
 
-dev.copy(png, file="plot4.png",height=480, width=480)
 dev.off()
 
 
